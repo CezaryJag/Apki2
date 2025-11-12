@@ -1,0 +1,15 @@
+App\Entity\Measurement:
+    properties:
+        celsius:
+            - NotBlank:
+                  message: 'Temperatura jest wymagana.'
+            - Type:
+                  type: numeric
+                  message: 'Temperatura musi być liczbą.'
+            - Range:
+                  min: -50
+                  max: 40
+                  notInRangeMessage: 'Temperatura musi być między -50 a 40°C.'
+        location:
+            - NotNull:
+                  message: 'Pomiar musi być przypisany do lokalizacji.'

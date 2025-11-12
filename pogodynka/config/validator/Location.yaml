@@ -1,58 +1,38 @@
-# config/validator/Location.yaml
 App\Entity\Location:
-    constraints:
-        - Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity:
-              fields: ['city', 'country']
-              message: 'This city and country combination already exists.'
-
-    create:
-        properties:
-            city:
-                - NotBlank: ~
-                - Length:
-                      min: 2
-                      max: 255
-                      minMessage: 'City name must be at least {{ limit }} characters long.'
-                      maxMessage: 'City name cannot be longer than {{ limit }} characters.'
-            country:
-                - NotBlank: ~
-            latitude:
-                - NotBlank: ~
-                - Range:
-                      min: -90
-                      max: 90
-                      minMessage: 'Latitude must be between -90 and 90.'
-                      maxMessage: 'Latitude must be between -90 and 90.'
-            longitude:
-                - NotBlank: ~
-                - Range:
-                      min: -180
-                      max: 180
-                      minMessage: 'Longitude must be between -180 and 180.'
-                      maxMessage: 'Longitude must be between -180 and 180.'
-
-    edit:
-        properties:
-            city:
-                - NotBlank: ~
-                - Length:
-                      min: 2
-                      max: 255
-                      minMessage: 'City name must be at least {{ limit }} characters long.'
-                      maxMessage: 'City name cannot be longer than {{ limit }} characters.'
-            country:
-                - NotBlank: ~
-            latitude:
-                - NotBlank: ~
-                - Range:
-                      min: -90
-                      max: 90
-                      minMessage: 'Latitude must be between -90 and 90.'
-                      maxMessage: 'Latitude must be between -90 and 90.'
-            longitude:
-                - NotBlank: ~
-                - Range:
-                      min: -180
-                      max: 180
-                      minMessage: 'Longitude must be between -180 and 180.'
-                      maxMessage: 'Longitude must be between -180 and 180.'
+    properties:
+        city:
+            - NotBlank:
+                  message: 'Nazwa lokalizacji nie może być pusta.'
+            - Length:
+                  min: 2
+                  max: 50
+                  minMessage: 'Nazwa musi mieć co najmniej {{ limit }} znaki.'
+                  maxMessage: 'Nazwa może mieć maksymalnie {{ limit }} znaków.'
+        country:
+            - NotBlank:
+                  message: 'Nazwa kraju nie może być pusta.'
+            - Length:
+                  min: 2
+                  max: 50
+                  minMessage: 'Nazwa musi mieć co najmniej {{ limit }} znaki.'
+                  maxMessage: 'Nazwa może mieć maksymalnie {{ limit }} znaków.'
+        latitude:
+            - NotBlank:
+                  message: 'Szerokość geograficzna jest wymagana.'
+            - Type:
+                  type: numeric
+                  message: 'Szerokość geograficzna musi być liczbą.'
+            - Range:
+                  min: -90
+                  max: 90
+                  notInRangeMessage: 'Szerokość geograficzna musi być między -90 a 90.'
+        longitude:
+            - NotBlank:
+                  message: 'Długość geograficzna jest wymagana.'
+            - Type:
+                  type: numeric
+                  message: 'Długość geograficzna musi być liczbą.'
+            - Range:
+                  min: -180
+                  max: 180
+                  notInRangeMessage: 'Długość geograficzna musi być między -180 a 180.'
