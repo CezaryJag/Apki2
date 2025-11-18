@@ -138,6 +138,7 @@
       <path value="$PROJECT_DIR$/pogodynka/vendor/symfony/web-link" />
       <path value="$PROJECT_DIR$/pogodynka/vendor/symfony/web-profiler-bundle" />
       <path value="$PROJECT_DIR$/pogodynka/vendor/symfony/yaml" />
+      <path value="$PROJECT_DIR$/pogodynka/vendor/symfony/rate-limiter" />
     </include_path>
   </component>
   <component name="PhpProjectSharedConfiguration" php_language_level="8.2" />

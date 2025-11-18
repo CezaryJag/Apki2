@@ -130,6 +130,7 @@
       <excludeFolder url="file://$MODULE_DIR$/pogodynka/vendor/twig/extra-bundle" />
       <excludeFolder url="file://$MODULE_DIR$/pogodynka/vendor/twig/twig" />
       <excludeFolder url="file://$MODULE_DIR$/pogodynka/vendor/webmozart/assert" />
+      <excludeFolder url="file://$MODULE_DIR$/pogodynka/vendor/symfony/rate-limiter" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
